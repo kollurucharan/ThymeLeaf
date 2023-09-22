@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf AJAX Example</title>
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Thymeleaf AJAX Example</h1>
+
+    <button id="getDataButton">Get Data</button>
+    
+    <div id="dataResponse"></div>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#getDataButton").click(function() {
+                $.get("/get-data", function(data) {
+                    $("#dataResponse").text(data);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
